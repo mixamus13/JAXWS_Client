@@ -1,0 +1,16 @@
+com/mixamus/client/Main.class
+com/mixamus/client/ws/demo/ProductWSImplService.class
+com/mixamus/client/ws/demo/Find.class
+com/mixamus/client/ws/demo/Hi.class
+com/mixamus/client/ws/demo/ProductWS.class
+com/mixamus/client/ws/demo/HelloWorldResponse.class
+com/mixamus/client/ws/demo/HelloWorld.class
+com/mixamus/client/ws/demo/FindAll.class
+com/mixamus/client/ws/demo/FindAllResponse.class
+com/mixamus/client/ws/demo/FindResponse.class
+com/mixamus/client/ws/demo/Demo.class
+com/mixamus/client/ws/demo/HiResponse.class
+com/mixamus/client/ws/demo/package-info.class
+com/mixamus/client/ws/demo/DemoImplService.class
+com/mixamus/client/ws/demo/ObjectFactory.class
+com/mixamus/client/ws/demo/Product.class

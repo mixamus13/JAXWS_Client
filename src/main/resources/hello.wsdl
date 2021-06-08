@@ -1,0 +1,62 @@
+<definitions xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+  xmlns:wsp="http://www.w3.org/ns/ws-policy"
+  xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+  xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:tns="http://ws.servers.mixamus.com/"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://ws.servers.mixamus.com/" name="DemoImplService">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://ws.servers.mixamus.com/" schemaLocation="http://localhost:7878/com.mixamus/servers/ws/demo?xsd=1"/>
+    </xsd:schema>
+  </types>
+  <message name="helloWorld">
+    <part name="parameters" element="tns:helloWorld"/>
+  </message>
+  <message name="helloWorldResponse">
+    <part name="parameters" element="tns:helloWorldResponse"/>
+  </message>
+  <message name="hi">
+    <part name="parameters" element="tns:hi"/>
+  </message>
+  <message name="hiResponse">
+    <part name="parameters" element="tns:hiResponse"/>
+  </message>
+  <portType name="Demo">
+    <operation name="helloWorld">
+      <input wsam:Action="http://ws.servers.mixamus.com/Demo/helloWorldRequest" message="tns:helloWorld"/>
+      <output wsam:Action="http://ws.servers.mixamus.com/Demo/helloWorldResponse" message="tns:helloWorldResponse"/>
+    </operation>
+    <operation name="hi">
+      <input wsam:Action="http://ws.servers.mixamus.com/Demo/hiRequest" message="tns:hi"/>
+      <output wsam:Action="http://ws.servers.mixamus.com/Demo/hiResponse" message="tns:hiResponse"/>
+    </operation>
+  </portType>
+  <binding name="DemoImplPortBinding" type="tns:Demo">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="helloWorld">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="hi">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="DemoImplService">
+    <port name="DemoImplPort" binding="tns:DemoImplPortBinding">
+      <soap:address location="http://localhost:7878/com.mixamus/servers/ws/demo"/>
+    </port>
+  </service>
+</definitions>
